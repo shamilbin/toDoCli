@@ -1,0 +1,27 @@
+{
+  "name": "2todo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "second toDo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shamilbin/toDoCli.git"
+  },
+  "keywords": [
+    "2todo"
+  ],
+  "author": "Shamil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shamilbin/toDoCli/issues"
+  },
+  "homepage": "https://github.com/shamilbin/toDoCli#readme",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "readline-sync": "^1.4.10"
+  }
+}
