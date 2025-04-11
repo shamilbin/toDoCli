@@ -1,18 +1,20 @@
 {
-  "name": "7thapril2025",
+  "name": "final",
   "version": "1.0.0",
-  "types": "module",
+  "type": "module",
+  "description": "final todo",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": [],
-  "author": "Suhail Roushan",
+  "keywords": [
+    "todo"
+  ],
+  "author": "shamil",
   "license": "ISC",
-  "description": "",
-  "type": "module",
   "dependencies": {
     "chalk": "^5.4.1",
+    "fs": "^0.0.1-security",
     "readline-sync": "^1.4.10"
   }
 }

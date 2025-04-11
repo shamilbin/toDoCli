@@ -2,7 +2,7 @@ import fs from "fs/promises";
 
 async function readFile() {
     try {
-        let dataPath = "/home/suhail/THSCohortA-2025-suhail/Phase2/node/7thApril2025/data.json"
+        let dataPath = "/Users/shamiltk/ths/toDoCli/3todo/suhail.json"
         let userFile = await fs.readFile(dataPath, "utf-8");
         return JSON.parse(userFile) // convert string to object
 
