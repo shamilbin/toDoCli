@@ -7,6 +7,7 @@ async function getAllUser() {
     try {
 
             console.clear()
+            // read file
            let getAll =  await fs.readFile("/Users/shamiltk/ths/toDoCli/final/bd.json","utf-8")
            console.log(getAll)
         
