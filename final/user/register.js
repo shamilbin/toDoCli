@@ -39,4 +39,5 @@ async function register() {
     console.log(error);
   }
 }
+// export register
 export default register;
