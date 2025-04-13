@@ -29,6 +29,7 @@ async function register() {
     };
 
     strToObj.push(user);
+    // read json
     await fs.writeFile(
       "/Users/shamiltk/ths/toDoCli/final/bd.json",
       JSON.stringify(strToObj)
