@@ -79,5 +79,5 @@ function main() {
     console.log(error);
   }
 }
-
+// call the main
 main();
