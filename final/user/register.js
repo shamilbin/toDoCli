@@ -9,7 +9,7 @@ async function register() {
     let userName = readline.question(
       chalk.bold.bgBlueBright("Enter Your Your User Nmae     :")
     );
-    let email = readline.question(
+    let email = readline.questionEMail(
       chalk.bold.bgBlueBright("Enter your emanil             :")
     );
     let pass = readline.question(

@@ -2,7 +2,8 @@ import chalk from "chalk";
 import readline from "readline-sync";
 import register from "./user/register.js";
 import getAllUser from "./user/getAllUser.js";
-function main() {
+import login from "./user/login.js";
+async function main() {
   try {
     console.clear();
     console.log(
@@ -38,18 +39,25 @@ function main() {
       console.log(chalk.bold.greenBright(x));
     });
 
-    let option = readline.questionInt(chalk.bold.bgBlackBright("Select your choice  :"));
+    let option = readline.questionInt(
+      chalk.bold.bgBlackBright("Select your choice  :")
+    );
 
     switch (option) {
       case 0:
-        console.log(chalk.bold.magentaBright("\nThanks for visiting THS TODO\n\tBYE BYE"));
-        break;
+        console.log(
+          chalk.bold.magentaBright("\nThanks for visiting THS TODO\n\tBYE BYE")
+        );
+        process.exit();
+
       case 1:
         // console.log(chalk.bold.magentaBright("\nThanks for visiting THS TODO"));
-        register()
+        register();
         break;
       case 2:
-        console.log(chalk.bold.magentaBright("\nThanks for visiting THS TODO"));
+        // console.log(chalk.bold.magentaBright("\nThanks for visiting THS TODO"));
+        await login();
+
         break;
       case 3:
         console.log(chalk.bold.magentaBright("\nThanks for visiting THS TODO"));
@@ -68,7 +76,7 @@ function main() {
         break;
       case 8:
         // console.log(chalk.bold.magentaBright("\nThanks for visiting THS TODO"));
-        getAllUser()
+        getAllUser();
         break;
 
       default:

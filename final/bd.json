@@ -1,6 +1,21 @@
 [
-  { "userName": "shamil", "email": "shamil", "pass": "34324", "todo": [] },
-  { "userName": "ishwari", "email": "jaimodhar", "pass": "34234", "todo": [] },
-  { "userName": "azhar", "email": "farhan", "pass": "23434", "todo": [] },
-  { "userName": "dsdsf", "email": "sdfdsf", "pass": "sdfdsf", "todo": [] }
+  {
+    "userName": "shamil",
+    "email": "shamil@gmail.com",
+    "pass": "123",
+    "todo": []
+  },
+  {
+    "userName": "ishwari",
+    "email": "ishwari@gmail.com",
+    "pass": "123",
+    "todo": []
+  },
+  {
+    "userName": "suhail",
+    "email": "shuhail@gmail.com",
+    "pass": "123",
+    "todo": []
+  },
+  { "userName": "azhar", "email": "azhar@gmail.com", "pass": "123", "todo": [] }
 ]
