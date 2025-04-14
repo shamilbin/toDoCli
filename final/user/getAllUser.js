@@ -8,7 +8,7 @@ async function getAllUser() {
 
             console.clear()
             // read file
-           let getAll =  await fs.readFile("/Users/shamiltk/ths/toDoCli/final/bd.json","utf-8")
+           let getAll =  await fs.readFile("/Users/shamiltk/ths/toDoCli/final/db.json","utf-8")
            console.log(getAll)
         
     } catch (error) {

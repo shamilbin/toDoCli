@@ -2,7 +2,7 @@ import chalk from "chalk";
 import readline from "readline-sync";
 import register from "./user/register.js";
 import getAllUser from "./user/getAllUser.js";
-import login from "./user/login.js";
+import login from "/Users/shamiltk/ths/toDoCli/final/login.js"
 async function main() {
   try {
     console.clear();

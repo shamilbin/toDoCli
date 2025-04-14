@@ -28,7 +28,7 @@ async function login() {
     // read db file
 
     let dbFile = await fs.readFile(
-      "/Users/shamiltk/ths/toDoCli/final/bd.json",
+      "/Users/shamiltk/ths/toDoCli/final/db.json",
       "utf-8"
     );
     let strToArr = JSON.parse(dbFile);

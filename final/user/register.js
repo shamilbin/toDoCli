@@ -31,7 +31,7 @@ async function register() {
     strToObj.push(user);
     // read json
     await fs.writeFile(
-      "/Users/shamiltk/ths/toDoCli/final/bd.json",
+      "/Users/shamiltk/ths/toDoCli/final/db.json",
       JSON.stringify(strToObj)
     );
     console.log(chalk.bold.redBright("\nYour Login Successfully   :\n"));
