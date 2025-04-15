@@ -1,0 +1,32 @@
+[
+  {
+    "userName": "shamil",
+    "email": "shamil@gmail.com",
+    "password": "12345",
+    "todo": []
+  },
+  {
+    "userName": "shamil",
+    "email": "shamil",
+    "password": "shamil",
+    "todo": []
+  },
+  {
+    "userName": "sha",
+    "email": "sha",
+    "password": "sha",
+    "todo": []
+  },
+  {
+    "userName": "hish",
+    "email": "hish",
+    "password": "hish",
+    "todo": []
+  },
+  {
+    "userName": "sami",
+    "email": "sami",
+    "password": "sami",
+    "todo": []
+  }
+]
