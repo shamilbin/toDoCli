@@ -1,0 +1,29 @@
+[
+  {
+    "userName": "shamil",
+    "email": "shamil@gmail.com",
+    "password": "12345",
+    "todo": [
+      {
+        "id": 1744712271437,
+        "todo": "read a book"
+      },
+      {
+        "id": 1744712295680,
+        "todo": "complet js"
+      }
+    ]
+  },
+  {
+    "userName": "ishwari",
+    "email": "ishwari@gmail.com",
+    "password": "12334",
+    "todo": []
+  },
+  {
+    "userName": "suhail",
+    "email": "suhail@gmail.com",
+    "password": "1234",
+    "todo": []
+  }
+]

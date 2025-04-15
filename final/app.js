@@ -3,6 +3,7 @@ import readline from "readline-sync";
 import register from "./user/register.js";
 import getAllUser from "./user/getAllUser.js";
 import login from "/Users/shamiltk/ths/toDoCli/final/login.js"
+import { lstat } from "fs";
 async function main() {
   try {
     console.clear();
@@ -36,7 +37,7 @@ async function main() {
       "\t8.Get All Users\n",
     ];
     options.map((x) => {
-      console.log(chalk.bold.greenBright(x));
+      console.log(chalk.bold.greenBright(x));lstat
     });
 
     let option = readline.questionInt(
