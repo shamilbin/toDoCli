@@ -15,7 +15,16 @@
     "userName": "sha",
     "email": "sha",
     "password": "sha",
-    "todo": []
+    "todo": [
+      {
+        "id": 1744736121503,
+        "todo": "go to walk"
+      },
+      {
+        "id": 1744736759454,
+        "todo": "go sleep"
+      }
+    ]
   },
   {
     "userName": "hish",
@@ -27,6 +36,12 @@
     "userName": "sami",
     "email": "sami",
     "password": "sami",
+    "todo": []
+  },
+  {
+    "userName": "nay",
+    "email": "nay",
+    "password": "nay",
     "todo": []
   }
 ]

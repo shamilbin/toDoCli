@@ -73,7 +73,7 @@ async function register() {
   }
 }
 
-//. 2. LODIN
+//. 2. LOGIN
 
 async function login() {
   try {
@@ -101,7 +101,7 @@ async function login() {
     );
     let dbData = await getAllData();
     let user = dbData.find((x) => {
-      x.email === email && x.password === password;
+      return x.email === email && x.password === password;
     });
 
     if (!user) {
@@ -121,7 +121,7 @@ async function login() {
 
 // 1. ADD TODO
 
-async function addTodo() {
+async function addTodo(data) {
   try {
     console.log(
       chalk.bold.greenBright("=====================================")
@@ -134,10 +134,8 @@ async function addTodo() {
     let userTodo = readline.question("ENter the todo  : ");
     let id = Date.now();
 
-    let users = await getAllData;
-    const user = users.find((x) => {
-      return x.email === data.email;
-    });
+    let users = await getAllData();
+    const user = users.find((x) => x.email === data.email);
     if (!users) {
       console.log(chalk.bold.redBright("User not found in DataBase"));
       return;
@@ -150,23 +148,155 @@ async function addTodo() {
     user.todo.push(todoOBject);
     await saveData(users);
 
-    console.log(chalk.bold.cyanBright("TODO TASK ADDED SUCCSESFULLY"))
+    console.log(chalk.bold.cyanBright("TODO TASK ADDED SUCCSESFULLY"));
+  } catch (error) {
+    console.log(error);
+  }
+}
+// 2. edit  TODO
+
+async function editTodo(data) {
+
+  try {
+    console.log(
+      chalk.bold.greenBright("=====================================")
+    );
+    console.log(chalk.bold.greenBright("============= Edit TODO ============="));
+    console.log(
+      chalk.bold.greenBright("=====================================\n")
+    );
+
+
+
+    let users = await getAllData(); // Get all users from db
+
+    const user = users.find((x) => x.email === data.email);
+    
+    if (!user) return console.log(chalk.bold.redBright("User not found."));
+
+    if (user.todo.length === 0) {
+      return console.log(chalk.bold.redBright("No todos to edit."));
+    }
+
+    user.todo.forEach((todo, index) => {
+      console.log(`${index + 1}. ${todo.todo}`);
+    });
+
+    let todoIndex = readline.questionInt(chalk.bold.cyanBright("Enter Todo Number to Edit: ")) - 1;
+    if (todoIndex < 0 || todoIndex >= user.todo.length) {
+      return console.log(chalk.bold.redBright("Invalid Todo Number."));
+    }
+
+    let newTodo = readline.question(chalk.bold.cyanBright("Enter new Todo: "));
+    user.todo[todoIndex].todo = newTodo;
+
+    await saveData(users);
+    console.log(chalk.bold.greenBright("Todo updated successfully!"));
+    
+  } catch (error) {
+    console.log(error)
+  }
+  
+}
 
 
 
 
 
 
+
+// 3. delete todo
+
+async function deleteTodo(data) {
+  try {
+    console.log("===================");
+    console.log("==== DELETE TODO ====");
+    console.log("===================");
+
+    let users = await getallData();
+    const user = users.find((x) => x.email === data.email);
+    if (!user) return console.log("User not found.");
+
+    if (user.todo.length === 0) {
+      return console.log("No todos to delete.");
+    }
+
+    user.todo.forEach((todo, index) => {
+      console.log(`${index + 1}. ${todo.todo}`);
+    });
+
+    let todoIndex = readline.questionInt("Enter Todo Number to Delete: ") - 1;
+    if (todoIndex < 0 || todoIndex >= user.todo.length) {
+      return console.log("Invalid Todo Number.");
+    }
+
+    user.todo.splice(todoIndex, 1);
+
+    await saveData(users);
+    console.log("Todo deleted successfully!");
   } catch (error) {
     console.log(error);
   }
 }
 
+
+//. 4. delete all todo
+
+
+async function deleteAllTodos(data) {
+  try {
+    console.log("========================");
+    console.log("=== DELETE ALL TODOS ===");
+    console.log("========================");
+
+    let users = await getallData();
+    const user = users.find((x) => x.email === data.email);
+    if (!user) return console.log("User not found.");
+
+    if (user.todo.length === 0) {
+      return console.log("No todos to delete.");
+    }
+
+    const confirm = readline.question("Are you sure? (yes/no): ");
+    if (confirm.toLowerCase() !== "yes") {
+      return console.log("Cancelled.");
+    }
+
+    user.todo = [];
+    await saveData(users);
+    console.log("All todos deleted successfully!");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  main fuction
 async function main() {
   try {
+    let currentUser = [];
     while (true) {
-      let currentUser = [];
       //   console.clear();
       console.log(
         chalk.bold.greenBright("=====================================")
@@ -212,17 +342,22 @@ async function main() {
 
           break;
         case 3:
+          await addTodo(currentUser);
           break;
         case 4:
+          await editTodo(currentUser)
           break;
         case 5:
+          await deleteTodo(currentUser)
           break;
         case 6:
+          await deleteAllTodos(currentUser)
           break;
         case 7:
           break;
 
         default:
+          console.log(chalk.bold.redBright("INVALID INPUT     : "))
           break;
       }
     }
